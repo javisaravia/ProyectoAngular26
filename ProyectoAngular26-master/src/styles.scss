@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Bootstrap is imported via angular.json, but we can override variables here if we were using SCSS source */
+/* For now, we use the compiled CSS, so we override with CSS variables or specific selectors. */
+
+:root {
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-dark: #1a1a2e;
+    --bs-body-bg: #16213e;
+    --bs-body-color: #e2e8f0;
+}
+
+body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #fff;
+    font-weight: 700;
+}
+
+a {
+    transition: color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
