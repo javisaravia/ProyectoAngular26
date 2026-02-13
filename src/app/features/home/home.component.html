@@ -1,0 +1,80 @@
+<header class="container text-center mt-5 fade-in">
+    <h1 class="display-4 fw-bold">Bienvenido a mi Portfolio</h1>
+    <p class="lead text-muted">Integración avanzada de elementos audiovisuales.</p>
+
+    <audio #audioPlayer id="audioFondo" loop>
+        <source src="assets/audio/musicaFondo.mp3" type="audio/mpeg">
+        <source src="assets/audio/musicaFondo.ogg" type="audio/ogg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <div class="mt-4">
+        <p class="mb-2">Control de ambiente:</p>
+        <button id="btnAudio" class="btn btn-outline-primary btn-lg shadow-sm" (click)="toggleAudio()"
+            data-bs-toggle="tooltip" data-bs-placement="top" title="Activar o Silenciar la música de fondo">
+            {{ isAudioPlaying ? '🔊 Silenciar Música' : '🔇 Activar Música' }}
+        </button>
+    </div>
+</header>
+
+<hr class="container my-5 opacity-25">
+
+<section class="container mb-5 fade-in">
+    <div class="row align-items-center bg-white p-4 rounded shadow-sm">
+
+        <div class="col-lg-4 text-center mb-4 mb-lg-0">
+            <!-- Ensure img/fotoperfil.png exists in assets/img or assets/ -->
+            <img src="assets/img/fotoperfil.png" alt="Foto de Javi"
+                class="img-fluid rounded-circle shadow border border-5 border-light"
+                style="max-width: 280px; width: 100%; height: auto; object-fit: cover;">
+        </div>
+
+        <div class="col-lg-8">
+            <h2 class="text-primary mb-4 text-center text-lg-start">Sobre mí</h2>
+
+            <div class="ps-lg-3">
+                <h3 class="h5 fw-bold text-dark">Quién soy</h3>
+                <p class="text-secondary">
+                    Me llamo Javi, tengo 20 años y soy de Sevilla. Soy un apasionado de la tecnología y el deporte.
+                    Me considero una persona creativa, generosa y con muchas ganas de aprender.
+                </p>
+
+                <h3 class="h5 fw-bold text-dark mt-4">Qué hago</h3>
+                <p class="text-secondary">
+                    Actualmente estoy estudiando un doble grado de Desarrollo de Aplicaciones Web y Multiplataforma en
+                    MEDAC.
+                    Mis habilidades dentro del ámbito de la programación son principalmente en HTML, CSS, JavaScript y
+                    PHP.
+                    En un futuro me gustaría poder dedicarme a algo relacionado con en el mundo de la tecnología.
+                </p>
+
+                <h3 class="h5 fw-bold text-dark mt-4">Qué me gusta</h3>
+                <p class="text-secondary">
+                    Como ya dije antes, me encanta la tecnología y el deporte. En mi tiempo libre suelo hacer deporte,
+                    ver películas o series y quedar con amigos.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="welcomeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-dark"> <!-- Added text-dark for visibility in dark theme if needed -->
+            <div class="modal-header bg-light">
+                <h5 class="modal-title">🎵 Experiencia Multimedia</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Este portfolio incluye una experiencia de sonido.</p>
+                <p><strong>¿Deseas activar la música de fondo ahora?</strong></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, gracias</button>
+                <button type="button" class="btn btn-primary" id="btnModalAccept" data-bs-dismiss="modal"
+                    (click)="acceptAudio()">Sí, activar audio</button>
+            </div>
+        </div>
+    </div>
+</div>

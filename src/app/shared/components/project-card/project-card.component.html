@@ -1,0 +1,21 @@
+<div class="card h-100 shadow-sm project-card">
+  <div class="card-img-wrapper">
+    <img [src]="project.image" class="card-img-top" [alt]="project.title" loading="lazy">
+    <div class="card-overlay" *ngIf="project.demoUrl || project.githubUrl">
+      <a *ngIf="project.demoUrl" [href]="project.demoUrl" target="_blank" class="btn btn-light btn-sm me-2">
+        <i class="bi bi-eye"></i> Demo
+      </a>
+      <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank" class="btn btn-dark btn-sm">
+        <i class="bi bi-github"></i> Code
+      </a>
+    </div>
+  </div>
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title fw-bold">{{ project.title }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted" *ngIf="project.date">{{ project.date | date:'MMM yyyy' }}</h6>
+    <p class="card-text flex-grow-1">{{ project.description }}</p>
+    <div class="mt-3">
+      <span *ngFor="let tech of project.technologies" class="badge bg-secondary me-1 mb-1">{{ tech }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<section class="py-5 bg-light-dark">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-white">Mis <span class="text-primary">Proyectos</span></h2>
+            <p class="lead text-muted">Una selección de mis trabajos y experimentos recientes.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4" *ngFor="let project of projects$ | async">
+                <app-project-card [project]="project"></app-project-card>
+            </div>
+        </div>
+    </div>
+</section>
